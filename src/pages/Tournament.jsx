@@ -130,7 +130,7 @@ const Tournament = ({ setCreatingTournament }) => {
   };
 
   return (
-    <div className="max-w-5xl m-auto h-screen w-screen p-6 md:p-0">
+    <div className="max-w-4xl m-auto h-screen w-screen p-6 lg:p-0">
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-desc"
@@ -138,7 +138,7 @@ const Tournament = ({ setCreatingTournament }) => {
         onClose={() => setOpen(false)}
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <div className="border-none outline-none p-6 md:p-0">
+        <div className="border-none outline-none p-6 lg:p-0">
           <ModalClose
             variant="outlined"
             sx={{
@@ -150,12 +150,12 @@ const Tournament = ({ setCreatingTournament }) => {
             }}
           />
 
-          <p className="md:text-3xl text-xl font-black">
+          <p className="lg:text-3xl text-xl font-black">
             Thanks for showing interest in{" "}
             <span className="underline text-secondary">Tournaments.IO</span>
           </p>
 
-          <p className="md:text-lg text-gray-800 font-medium mt-2 max-w-lg mx-auto text-center">
+          <p className="lg:text-lg text-gray-800 font-medium mt-2 max-w-lg mx-auto text-center">
             We are currently working on new features and not open for public use
             yet. Please join the waitlist so we can notify you when it's ready.
           </p>
@@ -199,9 +199,9 @@ const Tournament = ({ setCreatingTournament }) => {
 
       <>
         {/* Navigation */}
-        <nav className="flex md:pt-5 justify-between items-center">
+        <nav className="flex lg:pt-5 justify-between items-center">
           <span
-            className="font-black md:text-3xl text-xl cursor-pointer"
+            className="font-black lg:text-3xl text-xl cursor-pointer"
             onClick={() => {
               setCreatingTournament(false);
             }}
@@ -218,22 +218,22 @@ const Tournament = ({ setCreatingTournament }) => {
         </nav>
 
         {/* Header section */}
-        <section className="md:mt-20 mt-10">
+        <section className="lg:mt-20 mt-10">
           {/* Header text */}
-          <p className="font-black md:text-4xl text-xl flex place-content-center gap-3 uppercase">
+          <p className="font-black lg:text-4xl text-xl flex place-content-center gap-3 uppercase">
             create a tournament
           </p>
 
           {/* Sub-header text */}
-          <p className="text-gray-500 flex place-content-center mt-1 md:text-2xl text-lg w-[80%] m-auto text-center font-medium">
+          <p className="text-gray-500 flex place-content-center mt-1 lg:text-2xl text-lg w-[80%] m-auto text-center font-medium">
             Create tournaments and invite your friends to participate in it
           </p>
         </section>
 
         {/* Creating tournament section */}
-        <section className="flex mt-6 flex-col md:flex-row">
+        <section className="flex mt-6 flex-col lg:flex-row">
           {/* tournaments.io modes description */}
-          <div className="space-y-3 max-w-sm md:pr-3 md:text-lg text-sm text-center md:text-left">
+          <div className="space-y-3 max-w-sm lg:pr-3 lg:text-lg text-sm text-center lg:text-left">
             <p className="font-bold text-base">
               Tournaments.io has 2 types of tournaments. Friendly and Stakes
               tournament.
@@ -260,14 +260,14 @@ const Tournament = ({ setCreatingTournament }) => {
           </div>
 
           {/* Create a tournament */}
-          <div className="md:flex-1 md:max-w-lg md:mx-auto md:space-y-4 space-y-2">
+          <div className="lg:flex-1 lg:max-w-lg lg:mx-auto lg:space-y-4 space-y-2">
             {/* Select tournament type */}
             <div>
-              <p className="text-xl font-black md:font-semibold capitalize text-center mt-10 md:mt-0">
+              <p className="text-xl font-black lg:font-semibold capitalize text-center mt-10 lg:mt-0">
                 Create tournament
               </p>
 
-              <form className="mt-2 md:mt-1">
+              <form className="mt-2 lg:mt-1">
                 <p className="font-medium">Select tournament type</p>
 
                 <div className="pl-4">
