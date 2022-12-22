@@ -35,7 +35,7 @@ const LandingPage = ({ setCreatingTournament }) => {
       </section>
 
       {/* Game variety section */}
-      <section className="lg:mt-20 mt-10 flex items-center flex-col-reverse lg:flex-row">
+      <section className="lg:mt-16 mt-10 flex items-center flex-col-reverse lg:flex-row">
         {/* Variety description */}
         <div className="lg:space-y-4 space-y-2 flex-1">
           <p className="font-bold lg:text-xl text-lg">
@@ -61,7 +61,7 @@ const LandingPage = ({ setCreatingTournament }) => {
           {allTournamentGames.map((option, index) => (
             <img
               key={index}
-              className="lg:h-20 lg:w-20 h-12 w-12 rounded-md object-cover hover:scale-125 hover:rotate-3"
+              className="lg:h-16 lg:w-16 h-12 w-12 rounded-md object-cover hover:scale-125 hover:rotate-3"
               alt={option.name}
               src={option.src}
             />
