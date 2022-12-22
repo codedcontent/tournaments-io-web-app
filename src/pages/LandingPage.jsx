@@ -1,48 +1,47 @@
 import React from "react";
 import CustomButton from "../components/CustomButton";
-
 import allTournamentGames from "../constants/allTournamentGames";
 
-const LandingPage = ({ creatingTournament, setCreatingTournament }) => {
+const LandingPage = ({ setCreatingTournament }) => {
   const join = () => {
     setCreatingTournament(true);
   };
 
   return (
-    <div className="max-w-5xl m-auto h-screen w-screen">
+    <div className="max-w-5xl m-auto h-screen w-screen p-6 md:p-0">
       {/* Navigation */}
-      <nav className="flex pt-5 justify-between items-center">
-        <span className="font-black text-3xl">T.IO</span>
+      <nav className="flex md:pt-5  justify-between items-center">
+        <span className="font-black md:text-3xl text-xl">T.IO</span>
 
         <CustomButton title="Join Now" handleClick={join} />
       </nav>
 
       {/* Header section */}
-      <section className="mt-20">
+      <section className="md:mt-20 mt-10">
         {/* Header text */}
-        <div className="font-black text-4xl flex place-content-center gap-3 uppercase">
-          <span className="p-1 bg-secondary rotate-6 rounded-sm w-max block cursor-pointer hover:scale-105">
+        <div className="font-black md:text-4xl text-xl flex place-content-center gap-3 uppercase text-center">
+          <span className="py-4 md:py-1 p-1 bg-secondary rotate-6 rounded-sm w-max block cursor-pointer hover:scale-105 text-center">
             Play
           </span>
           <span className="">tournaments with friends</span>
         </div>
 
         {/* Sub-header text */}
-        <p className="text-gray-500 flex place-content-center mt-4 text-2xl w-[80%] m-auto text-center font-medium">
+        <p className="text-gray-500 flex place-content-center mt-4 md:text-2xl w-[80%] m-auto text-center font-medium">
           Stake prizes, battle to the death and collect the spoils of war, or
           just have a friendly battle
         </p>
       </section>
 
       {/* Game variety section */}
-      <section className="mt-20 flex items-center">
+      <section className="md:mt-20 mt-10 flex items-center flex-col-reverse md:flex-row">
         {/* Variety description */}
-        <div className="space-y-4 flex-1">
-          <p className="font-bold text-xl">
+        <div className="md:space-y-4 space-y-2 flex-1">
+          <p className="font-bold md:text-xl text-lg">
             Browse our variety of tournament games
           </p>
 
-          <p className="font-light text-base max-w-lg text-gray-500">
+          <p className="font-light md:text-base text-sm max-w-lg text-gray-500">
             We have a huge library of games that you can battle it out with your
             friends, play tournaments and be its victor of. All you can think
             of, we have it ready to go at{" "}
@@ -57,11 +56,11 @@ const LandingPage = ({ creatingTournament, setCreatingTournament }) => {
         </div>
 
         {/* Various games */}
-        <div className="grid grid-cols-3 gap-5 place-items-center">
+        <div className="grid md:grid-cols-3 grid-cols-4 md:gap-5 gap-3 place-items-center mb-5 md:mb-0">
           {allTournamentGames.map((option, index) => (
             <img
               key={index}
-              className="h-20 w-20 rounded-md object-cover hover:scale-105 hover:rotate-3"
+              className="md:h-20 md:w-20 h-12 w-12 rounded-md object-cover hover:scale-125 hover:rotate-3"
               alt={option.name}
               src={option.src}
             />
