@@ -253,18 +253,6 @@ const Tournament = () => {
               Each players battles to be the victor, the winner claims all
               stacked rewards at the end of the tournament.
             </p>
-
-            {/* Rewards */}
-            <p className="text-gray-500 text-base">
-              In a{" "}
-              <span className="text-secondary underline">
-                Rewards tournament
-              </span>
-              , no stakes are needed, all you need to do is register to
-              participate in a tournament, invite friends or foes to participate
-              and claim a reward at the end. The reward is given to the winner
-              by tournaments.io.
-            </p>
           </div>
 
           {/* Create a tournament */}
@@ -306,22 +294,6 @@ const Tournament = () => {
                       className="text-gray-500"
                     >
                       Stakes tournament
-                    </label>
-                  </div>
-
-                  {/* Rewards tournament */}
-                  <div className="block">
-                    <input
-                      type="radio"
-                      name="tournamentType"
-                      id="Rewards tournament"
-                    />
-
-                    <label
-                      htmlFor="Rewards tournament"
-                      className="text-gray-500"
-                    >
-                      Rewards tournament
                     </label>
                   </div>
                 </div>
