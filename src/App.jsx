@@ -1,22 +1,21 @@
 import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Tournament from "./pages/Tournament";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/tournaments",
+    element: <Tournament />,
+  },
+]);
+
 function App() {
-  const [creatingTournament, setCreatingTournament] = useState(false);
-
-  return (
-    <div className="h-screen w-screen">
-      {
-        creatingTournament ? 
-        <Tournament setCreatingTournament={setCreatingTournament} /> :
-
-      <LandingPage
-        setCreatingTournament={setCreatingTournament}
-      />
-      }
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

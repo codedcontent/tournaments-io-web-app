@@ -26,4 +26,6 @@ const allTournamentGames = [
   { name: "darts", src: dart },
 ];
 
+// Mario game
+
 export default allTournamentGames;

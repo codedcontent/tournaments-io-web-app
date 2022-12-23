@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 import allTournamentGames from "../constants/allTournamentGames";
 
-const LandingPage = ({ setCreatingTournament }) => {
+const LandingPage = () => {
   const join = () => {
     setCreatingTournament(true);
   };
@@ -13,7 +14,9 @@ const LandingPage = ({ setCreatingTournament }) => {
       <nav className="flex lg:pt-5 justify-between items-center">
         <span className="font-black lg:text-3xl text-xl">T.IO</span>
 
-        <CustomButton title="Join Now" handleClick={join} />
+        <Link to={"/tournaments"}>
+          <CustomButton title="Join Now" />
+        </Link>
       </nav>
 
       {/* Header section */}
@@ -52,7 +55,9 @@ const LandingPage = ({ setCreatingTournament }) => {
           </p>
 
           <div className="w-max">
-            <CustomButton title="Join Now" handleClick={join} />
+            <Link to={"/tournaments"}>
+              <CustomButton title="Join Now" handleClick={join} />
+            </Link>
           </div>
         </div>
 

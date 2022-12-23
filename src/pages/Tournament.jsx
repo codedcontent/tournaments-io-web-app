@@ -7,9 +7,10 @@ import { LinearProgress, ModalClose } from "@mui/joy";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import { useSnackbar } from "notistack";
+import { Link } from "react-router-dom";
 
-const Tournament = ({ setCreatingTournament }) => {
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+const Tournament = () => {
+  const { enqueueSnackbar } = useSnackbar();
 
   const [selectedGame, setSelectedGame] = useState(null);
 
@@ -37,7 +38,6 @@ const Tournament = ({ setCreatingTournament }) => {
     } finally {
       setAddingToWaitList(false);
       setEmail("");
-      setCreatingTournament(setCreatingTournament);
     }
   };
 
@@ -200,25 +200,19 @@ const Tournament = ({ setCreatingTournament }) => {
       <>
         {/* Navigation */}
         <nav className="flex lg:pt-5 justify-between items-center">
-          <span
-            className="font-black lg:text-3xl text-xl cursor-pointer"
-            onClick={() => {
-              setCreatingTournament(false);
-            }}
-          >
-            T.IO
-          </span>
+          <Link to={"/"}>
+            <span className="font-black lg:text-3xl text-xl cursor-pointer">
+              T.IO
+            </span>
+          </Link>
 
-          <CustomButton
-            title="Home"
-            handleClick={() => {
-              setCreatingTournament(false);
-            }}
-          />
+          <Link to={"/"}>
+            <CustomButton title="Home" />
+          </Link>
         </nav>
 
         {/* Header section */}
-        <section className="lg:mt-20 mt-10">
+        <section className="lg:mt-15 mt-10">
           {/* Header text */}
           <p className="font-black lg:text-4xl text-xl flex place-content-center gap-3 uppercase">
             create a tournament
@@ -233,13 +227,24 @@ const Tournament = ({ setCreatingTournament }) => {
         {/* Creating tournament section */}
         <section className="flex mt-6 flex-col lg:flex-row">
           {/* tournaments.io modes description */}
-          <div className="space-y-3 max-w-sm lg:pr-3 lg:text-lg text-sm text-center lg:text-left">
+          <div className="space-y-3 lg:space-y-6 max-w-sm lg:pr-3 lg:text-lg text-sm text-center lg:text-left">
             <p className="font-bold text-base">
               Tournaments.io has 2 types of tournaments. Friendly and Stakes
               tournament.
             </p>
 
-            <p className="text-gray-500">
+            {/* Friendly */}
+            <p className="text-gray-500 text-base">
+              In a{" "}
+              <span className="text-secondary underline">
+                Friendly tournament
+              </span>
+              , you can only invite friends to play a tournament, no prizes to
+              be won at the end.
+            </p>
+
+            {/* Stakes */}
+            <p className="text-gray-500 text-base">
               In a{" "}
               <span className="text-secondary underline">
                 Stakes tournament
@@ -249,13 +254,16 @@ const Tournament = ({ setCreatingTournament }) => {
               stacked rewards at the end of the tournament.
             </p>
 
-            <p className="text-gray-500">
+            {/* Rewards */}
+            <p className="text-gray-500 text-base">
               In a{" "}
               <span className="text-secondary underline">
-                Friendly tournament
+                Rewards tournament
               </span>
-              , you can only invite friends to play a tournament, no prizes to
-              be won at the end
+              , no stakes are needed, all you need to do is register to
+              participate in a tournament, invite friends or foes to participate
+              and claim a reward at the end. The reward is given to the winner
+              by tournaments.io.
             </p>
           </div>
 
@@ -271,6 +279,7 @@ const Tournament = ({ setCreatingTournament }) => {
                 <p className="font-medium">Select tournament type</p>
 
                 <div className="pl-4">
+                  {/* Friendly tournament */}
                   <div className="block">
                     <input
                       type="radio"
@@ -285,6 +294,7 @@ const Tournament = ({ setCreatingTournament }) => {
                     </label>
                   </div>
 
+                  {/* Stakes tournament */}
                   <div className="block">
                     <input
                       type="radio"
@@ -296,6 +306,22 @@ const Tournament = ({ setCreatingTournament }) => {
                       className="text-gray-500"
                     >
                       Stakes tournament
+                    </label>
+                  </div>
+
+                  {/* Rewards tournament */}
+                  <div className="block">
+                    <input
+                      type="radio"
+                      name="tournamentType"
+                      id="Rewards tournament"
+                    />
+
+                    <label
+                      htmlFor="Rewards tournament"
+                      className="text-gray-500"
+                    >
+                      Rewards tournament
                     </label>
                   </div>
                 </div>
