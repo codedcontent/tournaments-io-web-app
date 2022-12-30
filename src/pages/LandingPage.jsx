@@ -14,7 +14,7 @@ const LandingPage = () => {
       <nav className="flex lg:pt-5 justify-between items-center">
         <span className="font-black lg:text-3xl text-xl">T.IO</span>
 
-        <Link to={"/tournaments"}>
+        <Link to={"/tournaments/tournament-id/game/game-id"}>
           <CustomButton title="Join Now" />
         </Link>
       </nav>
