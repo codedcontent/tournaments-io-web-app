@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CustomAppBar from "./components/CustomAppBar";
 import LandingPage from "./pages/LandingPage";

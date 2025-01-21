@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useWindowSize from "../hooks/useWindowSize";
 import CustomButton from "./CustomButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ClickAwayListener from "@mui/base/ClickAwayListener";
+import { ClickAwayListener } from "@mui/base/ClickAwayListener";
 
 const CustomAppBar = () => {
   const { width: screenWidth } = useWindowSize();
